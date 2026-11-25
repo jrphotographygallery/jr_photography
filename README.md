@@ -9,6 +9,7 @@ Open `index.html` in a browser. For a closer-to-live test: `python3 -m http.serv
 - `data.js`: photo titles, descriptions, categories, collections, print sizes/prices, paper finishes, social links, email.
 - Fine-art paper extra is set to £10 as a placeholder. Change `extra` in `finishes`.
 - `style.css`: colours and fonts (top of file). Portrait: set `portrait: "images/me.jpg"`.
+- 
 
 ## Add photos
 1. Resize to about 1800px on the long edge (JPEG, ~300 KB) and put it in `images/`.
