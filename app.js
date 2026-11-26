@@ -135,3 +135,12 @@ document.addEventListener("keydown", e => {
 });
 $("#burger").onclick = () => { const o = $("#nav").classList.toggle("open"); $("#burger").setAttribute("aria-expanded", o); };
 addEventListener("hashchange", render); nav(); foot(); render(); $("#bc").textContent = count();
+if (new URLSearchParams(location.search).get("paid") === "1") {
+  basket = []; save(); $("#bc").textContent = count();
+  history.replaceState(null, "", location.pathname + "#home");
+  const note = document.createElement("div");
+  note.setAttribute("role", "status");
+  note.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 3rem 1rem 1rem;background:#1f6f43;color:#fff;text-align:center";
+  note.innerHTML = 'Thank you, your order is confirmed. <button type="button" aria-label="Dismiss" style="position:absolute;right:1rem;top:.8rem;background:none;border:0;color:#fff;font-size:1.2rem;cursor:pointer" onclick="this.parentNode.remove()">✕</button>';
+  document.body.append(note);
+}
