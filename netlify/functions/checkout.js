@@ -12,7 +12,7 @@ exports.handler = async (event) => {
     if (!Array.isArray(items) || !items.length) throw new Error("empty basket");
     const p = new URLSearchParams();
     p.append("mode", "payment");
-    p.append("success_url", process.env.URL + "/#home");
+    p.append("success_url", process.env.URL + "/?paid=1#home");
     p.append("cancel_url", process.env.URL + "/#prints");
     p.append("shipping_address_collection[allowed_countries][0]", "GB");
     p.append("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
